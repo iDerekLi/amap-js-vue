@@ -1,0 +1,110 @@
+{
+  "name": "amap-js-vue",
+  "version": "0.1.0",
+  "description": "`amap-js-vue` 是基于 Vue.js 和 高德地图 AMap JavaScript API 的地图组件",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib",
+    "types"
+  ],
+  "scripts": {
+    "bootstrap": "yarn || npm i",
+    "dev": "node build/build-entry.js && webpack-dev-server --config build/webpack.site.dev.js",
+    "lint": "eslint . --ext .js,.vue,.ts,.tsx --fix && stylelint \"src/**/*.less\" --fix",
+    "build": "node build/build-lib.js",
+    "release": "sh build/release.sh"
+  },
+  "keywords": [
+    "amap",
+    "map",
+    "gis"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,vue}": [
+      "eslint"
+    ],
+    "*.{vue,css,less}": [
+      "stylelint"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:iDerekLi/amap-js-vue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iDerekLi/amap-js-vue/issues"
+  },
+  "homepage": "https://github.com/iDerekLi/amap-js-vue#readme",
+  "author": "Derek Li",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime-corejs2": "^7.7.4",
+    "http-jsonp": "^1.1.1"
+  },
+  "peerDependencies": {
+    "vue": ">= 2.5.22"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-syntax-jsx": "^7.7.4",
+    "@babel/plugin-transform-object-assign": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@vue/babel-preset-jsx": "^1.1.2",
+    "autoprefixer": "^9.7.2",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.2.0",
+    "csso": "^4.0.2",
+    "dependency-tree": "^7.1.0",
+    "eslint": "^6.7.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-vue": "^6.0.1",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "fs-extra": "^8.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.1.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "lint-staged": "^9.4.1",
+    "postcss": "^7.0.23",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.19.1",
+    "shelljs": "^0.8.3",
+    "signale": "^1.4.0",
+    "style-loader": "^1.0.0",
+    "stylelint": "^12.0.0",
+    "uppercamelcase": "^3.0.0",
+    "vue": "^2.6.10",
+    "vue-eslint-parser": "^7.0.0",
+    "vue-loader": "^15.7.2",
+    "vue-router": "^3.1.3",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2",
+    "webpackbar": "^4.0.0"
+  },
+  "sideEffects": [
+    "es/**/style/*",
+    "lib/**/style/*",
+    "*.css",
+    "*.less"
+  ],
+  "browserslist": [
+    "Android >= 4.0",
+    "iOS >= 7"
+  ]
+}
